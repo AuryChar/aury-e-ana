@@ -10,7 +10,7 @@
 <body class="bg-gradient-to-bl from-neutral-900 from-40% to-purple-950 via-10% bg-no-repeat h-screen flex flex-col items-center justify-center text-white gap-2">
     <div class="flex items-center justify-center w-[90%] rounded-2xl bg-neutral-900 border-1 border-purple-950 shadow-2xl p-2 gap-2">
         <h4 class="text-2xl font-bold text-center text-purple-300">Musiquinha</h4>
-        <button onclick="toggleAudio()" class="flex items-center justify-center"><i class="bx bx-play-circle text-2xl"></i></button>
+        <button onclick="toggleAudio()" class="flex items-center justify-center"><i class="bx bx-play-circle text-2xl" id="play"></i></button>
     </div>
     <div class="flex items-center justify-start flex-col h-[90%] w-[90%] rounded-2xl bg-neutral-900 border-1 border-purple-950 shadow-2xl p-2 gap-2 overflow-auto">
         <h1 class="text-3xl font-bold text-center text-purple-300">Bom... se você ta lendo isso é pq vose aceitou</h1>
@@ -47,6 +47,7 @@
     <script>
         const audio = document.getElementById('melting');
         const toast = document.getElementById('toast');
+        const playButton = document.getElementById('play');
     
         function showToast(message) {
             toast.textContent = message;
@@ -63,9 +64,13 @@
             if (audio.paused) {
                 audio.play();
                 showToast("Tocando: Melting - Kali Uchis");
+                playButton.classList.remove('bx-play-circle');
+                playButton.classList.add('bx-pause-circle');
             } else {
                 audio.pause();
                 showToast("Pausado");
+                playButton.classList.remove('bx-pause-circle');
+                playButton.classList.add('bx-play-circle');
             }
         }
     </script>
