@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>amo vose aninha sua fodida</title>
     <link rel="stylesheet" href="assets/css/output.css">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
 </head> 
-<body class="bg-gradient-to-bl from-neutral-900 from-40% to-purple-950 via-10% bg-no-repeat h-screen flex items-center justify-center text-white">
+<body class="bg-gradient-to-bl from-neutral-900 from-40% to-purple-950 via-10% bg-no-repeat h-screen flex flex-col items-center justify-center text-white gap-2">
+    <div class="flex items-center justify-center w-[90%] rounded-2xl bg-neutral-900 border-1 border-purple-950 shadow-2xl p-2 gap-2">
+        <h4 class="text-2xl font-bold text-center text-purple-300">Musiquinha</h4>
+        <button onclick="toggleAudio()" class="flex items-center justify-center"><i class="bx bx-play-circle text-2xl"></i></button>
+    </div>
     <div class="flex items-center justify-start flex-col h-[90%] w-[90%] rounded-2xl bg-neutral-900 border-1 border-purple-950 shadow-2xl p-2 gap-2 overflow-auto">
         <h1 class="text-3xl font-bold text-center text-purple-300">Bom... se você ta lendo isso é pq vose aceitou</h1>
         <h1 class="text-md text-center text-neutral-300">ou seja</h1>
@@ -32,9 +37,37 @@
             muito baitola eu msm aff
         </p>
     </div>
-    <audio autoplay loop>
+    <audio id="melting" loop>
         <source src="https://archive.org/download/KaliUchis_PorVida/03%20Melting.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
     </audio>
+    <div id="toast" class="fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-neutral-800 text-white px-4 py-2 rounded-xl shadow-xl text-sm font-semibold opacity-0 transition-all duration-500 pointer-events-none">
+        Pausado
+    </div>
+    <script>
+        const audio = document.getElementById('melting');
+        const toast = document.getElementById('toast');
+    
+        function showToast(message) {
+            toast.textContent = message;
+            toast.classList.remove('opacity-0');
+            toast.classList.add('opacity-100');
+    
+            setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0');
+            }, 2500);
+        }
+    
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                showToast("Tocando: Melting - Kali Uchis");
+            } else {
+                audio.pause();
+                showToast("Pausado");
+            }
+        }
+    </script>
 </body>
 </html>
