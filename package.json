@@ -1,0 +1,24 @@
+{
+  "name": "aury-e-ana",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/AuryChar/aury-e-ana#readme",
+  "bugs": {
+    "url": "https://github.com/AuryChar/aury-e-ana/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AuryChar/aury-e-ana.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.8",
+    "tailwindcss": "^4.1.8"
+  }
+}
