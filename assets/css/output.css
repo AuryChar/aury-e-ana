@@ -256,6 +256,9 @@
   .bg-neutral-900 {
     background-color: var(--color-neutral-900);
   }
+  .bg-white {
+    background-color: var(--color-white);
+  }
   .bg-gradient-to-bl {
     --tw-gradient-position: to bottom left in oklab;
     background-image: linear-gradient(var(--tw-gradient-stops));
