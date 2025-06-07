@@ -64,6 +64,18 @@
         <p class="text-md text-center text-neutral-600 italic">
             Somewhere in these eyes I’m on your side...
         </p>
+        <hr class="border-1 border-neutral-300 w-[90%]">
+        <h2 class="text-2xl font-bold text-center">Return to Serenity</h2>
+        <iframe class="rounded-3xl" width="90%" height="315" src="https://www.youtube.com/embed/F3DUxYUR5IA?si=Zq1xwZciu-VGkeFy" title="YouTube video player" frameborder="0" allow="autoplay; clipboard-write; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <p class="text-md text-center text-neutral-600 italic">
+            No one will see us, watch the pain as it disappears...
+        </p>
+    </div>
+    <div class="flex items-center justify-center w-[90%] rounded-2xl bg-neutral-900 border-1 border-purple-950 shadow-2xl p-2 gap-2">
+        <h4 class="text-2xl font-bold text-center text-purple-300">Tempo juntas:</h4>
+        <h4 id="timeTogether" class="text-1xl font-bold text-center text-neutral-400">
+            <!-- time will be rendered here -->
+        </h4>
     </div>
     <audio id="melting" loop>
         <source src="https://archive.org/download/KaliUchis_PorVida/03%20Melting.mp3" type="audio/mpeg" />
@@ -101,6 +113,21 @@
                 playButton.classList.add('bx-play-circle');
             }
         }
+
+        const startDate = new Date("2025-02-28");
+        const timeElement = document.getElementById("timeTogether");
+
+        function updateTimeTogether() {
+            const now = new Date();
+            const diff = now - startDate;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+            timeElement.textContent = `Nós estamos juntas há ${days} dias HAUHSAHAHAH`;
+        }
+
+        setInterval(updateTimeTogether, 1000);
+        updateTimeTogether();
     </script>
 </body>
 </html>
